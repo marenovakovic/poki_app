@@ -6,5 +6,5 @@ class InputController {
 
   void set input(String value) => _streamController.add(value);
 
-  Stream<String> get text => _streamController.stream;
+  Stream<String> get text => _streamController.stream.map((event) => '$event.testing');
 }
