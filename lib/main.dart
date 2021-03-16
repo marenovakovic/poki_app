@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:poki_app/input_controller.dart';
+import 'package:poki_app/toggle.dart';
 
 void main() {
   runApp(PokiApp());
@@ -36,29 +37,7 @@ class InputScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Poki App'),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            TextField(onChanged: (text) => inputController.input = text),
-            StreamBuilder(
-              stream: inputController.text,
-              builder: (context, snapshot) => Text('${snapshot.data}'),
-            ),
-            StreamBuilder(
-              stream: inputController.text,
-              builder: (context, snapshot) => Text('${snapshot.data}'),
-            ),
-            StreamBuilder(
-              stream: inputController.text,
-              builder: (context, snapshot) => Text('${snapshot.data}'),
-            ),
-            StreamBuilder(
-              stream: inputController.text,
-              builder: (context, snapshot) => Text('${snapshot.data}'),
-            ),
-          ],
-        ),
-      ),
+      body: Toggle(),
     );
   }
 }
